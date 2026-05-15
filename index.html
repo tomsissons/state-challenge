@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>State AI</title>
+    <meta
+      name="description"
+      content="State AI MVP blank page resembling the State app shell."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div id="tooltip-backdrop" class="tooltip-backdrop" hidden></div>
+
+      <header class="mobile-header">
+        <button
+          id="menu-toggle"
+          class="icon-button"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="sidebar"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="brand">
+          <div class="brand-badge">S</div>
+          <span>State</span>
+        </div>
+      </header>
+
+      <div id="overlay" class="overlay" hidden></div>
+
+      <aside id="sidebar" class="sidebar" aria-label="Sidebar navigation">
+        <div class="sidebar-top">
+          <div class="brand">
+            <div class="brand-badge">S</div>
+            <span>State</span>
+          </div>
+        </div>
+
+        <nav class="nav-group" aria-label="Main navigation">
+          <a class="nav-item active" href="#">New Chat</a>
+          <a class="nav-item" href="#">Themes</a>
+          <a class="nav-item" href="#">Map</a>
+        </nav>
+
+        <div class="nav-divider"></div>
+
+        <nav class="nav-group" aria-label="Secondary navigation">
+          <a class="nav-item" href="#">Create Motion</a>
+          <a class="nav-item disabled" href="#" aria-disabled="true"
+            >Notifications</a
+          >
+          <a class="nav-item" href="#">Profile</a>
+        </nav>
+
+        <div class="nav-footer">
+          <a class="nav-item" href="#">Give Feedback</a>
+          <a class="nav-item" href="#">Logout</a>
+          <section class="logged-in-card" aria-label="Logged in user">
+            <p class="logged-in-label">Logged in</p>
+            <p class="logged-in-role">MP of Berkhamsted</p>
+          </section>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <section class="chat-shell" aria-label="State AI chat interface">
+          <header class="chat-header">
+            <h1>State AI</h1>
+            <p>
+              We've trained our AI on millions of online signals from your
+              citizens, including online petitions, social media posts and
+              community groups. Ask the State AI bot a question to see what
+              these citizens think about a certain topic.
+            </p>
+          </header>
+
+          <div
+            id="chat-thread"
+            class="chat-thread"
+            role="log"
+            aria-live="polite"
+            aria-label="Conversation"
+          >
+            <article class="message assistant">
+              <div class="message-avatar" aria-hidden="true">AI</div>
+              <div class="message-content">
+                <div class="message-label">State AI</div>
+                <p>
+                  Ask any policy or local issue question and I will summarise
+                  what citizens are saying.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="composer-wrap">
+            <section
+              id="chat-tooltip"
+              class="chat-tooltip"
+              aria-label="Ask State AI prompt"
+              hidden
+            >
+              <h2 id="tooltip-title">Ask State AI a Question</h2>
+              <p id="tooltip-caption">
+                You can ask State AI a question to see what your citizens think
+                about any topic.
+              </p>
+              <button id="tooltip-cta" type="button">Ask a question</button>
+            </section>
+
+            <form
+              id="chat-form"
+              class="chat-composer"
+              aria-label="Send message"
+            >
+              <label class="sr-only" for="chat-input">Type your message</label>
+              <textarea
+                id="chat-input"
+                rows="1"
+                maxlength="1200"
+                placeholder="Message State AI..."
+              ></textarea>
+              <button id="chat-send" type="submit">Send</button>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
